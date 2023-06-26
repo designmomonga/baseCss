@@ -1,0 +1,412 @@
+@charset "UTF-8";
+/* CSS Document */
+/*****************************************
+*スマートフォン
+******************************************/
+/*
+*初期設定
+-----------------------------------------*/
+*{
+	box-sizing:border-box;/*ボックスの幅は、ボーダー、パディングを含む*/
+}
+html{
+	font-size:62.5%;/*rem指定のため、ブラウザデフォルト文字サイズを10pxに指定しておく*/
+	font-family:"游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+	font-weight: 500;
+}
+body{
+	font-size:1.3rem;/*デフォルトでは、13px相当の文字サイズに指定する。*/
+	color:#333;/*デフォルトでの文字色。真っ黒だと、強いので少しグレーな黒にしておく。*/
+}
+img{
+	max-width:100%;/*フルードイメージの指定*/
+	height: auto;/*フルードイメージの比率保持f/
+	vertical-align:bottom;/*画像の下のディセンダ対策*/
+}
+a{
+	text-decoration:none;
+}
+ul,ol{
+	list-style-type:none;/*リストの行頭文字を非表示*/
+}
+/*
+*カスタムプロパティ
+-----------------------------------------*/
+:root {
+}
+/*
+*ヘッダー
+-----------------------------------------*/
+
+/*
+*コンテンツ
+-----------------------------------------*/
+
+/*
+*フッター
+-----------------------------------------*/
+
+/*****************************************
+*タブレットでの指定
+******************************************/
+@media screen and (min-width:600px) {
+	/*
+	*【タブレット】-初期設定
+	-------------------------------------*/
+	body{
+		font-size:1.4rem;
+	}
+
+}
+/*****************************************
+*PC
+******************************************/
+@media screen and (min-width:960px) {
+	/*
+	*【PC】-初期設定
+	-------------------------------------*/
+	body{
+		font-size:1.6rem;
+	}
+	/*
+	*【PC】-ヘッダー
+	-------------------------------------*/
+	.header__column-sp{
+		display: none;
+	}
+	.header{
+		position: fixed;
+		top:0;
+		width: 100vw;
+		z-index: 9999;
+		transition: all .3s ease-out;
+		background-color: rgba(255,255,255,.92);
+	}
+	.header.scrolled{
+		background-color: rgba(255, 255, 255, 1);
+		box-shadow: 0 5px 5px 0 rgba(0,0,0,.05);
+		/*border-bottom: 1px solid #ededed;*/
+	}
+	.header__inner{
+		width:min(100%,1300px);
+		height: 105px;
+		margin: 0 auto;
+		padding: 0 25px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.header__txt{
+		display: block;
+		position: absolute;
+		top: 5px;
+		left: 15px;
+		font-size: 1.2rem;
+		font-weight: 200;
+		white-space: nowrap;
+	}
+	.header__logo{
+		padding-top: 35px;
+	}
+	.header__logo img{
+		width: 160px;
+	}
+	.header__column1{
+		position: relative;
+		width: 25%;
+	}
+	.header__column2{
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		align-self: flex-end;
+	}
+	.header__sub-nav{
+		display: flex;
+		align-items: center;
+		margin: 0 0 0 auto;
+	}
+	.header__tel{
+		display: flex;
+		align-items: center;
+		line-height: 1;
+	}
+	.header__tel a{
+		display: flex;
+		align-items: center;
+		font-weight: 400;
+		font-size: 2.6rem;
+		font-family: Roboto,"Noto Sans JP",sans-serif;
+		color: var(--sub-color1);
+		letter-spacing: 0.03em;
+	}
+	.header__tel a::before{
+		display: inline-block;
+		width: 30px;
+		height: 24px;
+		margin: 0 5px 0 0;
+		background: url("../images/common_icon_freedaial.png") no-repeat center;
+		background-size: contain;
+		content: "";
+	}
+	.header__tel span{
+		margin: 0 0 0 12px;
+		font-size: 1rem;
+		line-height: 1.25;
+		font-family: Roboto,"Noto Sans JP",sans-serif;
+		letter-spacing: 0.05em;
+		color: #292929;
+		font-weight: 300;
+	}
+	.header__contact{
+		margin-left: 20px;
+		font-size: 1.6rem;
+		letter-spacing: .05em;
+	}
+	.header__contact a{
+		width: 155px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #333;
+		text-decoration: none;
+		border: 1px solid #c3c3c3;
+	}
+	.header__contact a .fa-envelope{
+		margin-right: 3px;
+		color: #666;
+		font-size: 1.4rem;
+		display: none;
+	}
+	.header__achievement{
+		margin: 0 0 0 8px;
+		font-weight: 400;
+		font-size: 1.5rem;
+		line-height: 1;
+		letter-spacing: 0.05em;
+	}
+	.header__achievement a{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 184px;
+		height: 44px;
+		border: 1px solid #363333;
+		color: #393939;
+		text-decoration: none;
+	}
+	.header__gnav__menu{
+		display: flex;
+		padding: 0 10px 0 0;
+	}
+	.header__gnav__menu > li{
+		margin: 0 16px;
+		font-weight: 500;
+		line-height: 1;
+		letter-spacing: 0.05em;
+		white-space: nowrap;
+	}
+	.header__gnav__menu > li > .category > a{
+		display: block;
+		z-index: 502;
+		position: relative;
+		padding: 15px 0 20px;
+		text-decoration: none;
+		cursor: pointer;
+		color: #363636;
+	}
+	.header.scrolled .header__gnav__menu > li > .category > a{
+		color: #4d4d4d;
+	}
+	.header__gnav__menu > li > .category > a::after{
+		display: inline-block;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		width: 0;
+		height: 3px;
+		transform: translate(-50%,0);
+		border-radius: 2px;
+		/*background: var(--base-color);*/
+		background: var(--gray1);
+		content: "";
+		transition: width .3s;
+	}
+	.header__gnav__menu > li:hover > .category > a::after{
+		 width:100%
+	}
+	.menu-list{
+		display: none;
+		position: absolute;
+		top:100%;
+		left:0;
+		width: 100vw;
+		background: rgba(3, 20, 41, 0.87);
+		box-shadow: 0 5px 5px 0 rgba(0,0,0,.05);
+	}
+	.menu-list__inner{
+		max-width: 1300px;
+		min-height: 260px;
+		margin: 0 auto;
+		padding: 30px 0;
+		color: #ccc;
+	}
+	/*
+	*【PC】-コンテンツ
+	-------------------------------------*/
+	.inner{
+		max-width: 1300px;
+		margin: 0 auto;
+		padding: 25px;
+	}
+	/*
+	*【PC】-フッター
+	-------------------------------------*/
+	.footer__block {
+		width: 100%;
+		max-width: 1300px;
+		margin: 0 auto;
+		padding: 60px 25px 60px;
+	}
+	.footer__menu {
+		display: flex;
+		justify-content: space-between;
+	}
+	.footer__menu__about{
+		white-space: nowrap;
+	}
+	.footer__menu__logo img {
+		width: 160px;
+	}
+	.footer__menu__address{
+		font-size: 1.4rem;
+	}
+	.footer__menu__sns{
+		width: 130px;
+		margin-top: 15px;
+		display: flex;
+		justify-content: space-between;
+	}
+	.footer__menu__sns li{
+		/*background: #ccc;*/
+		width: 40px;
+		height: 40px;
+	}
+	.footer__menu__sns li a{
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 1.8rem;
+	}
+	.footer__menu__nav {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+	}
+	.fmn__block{
+		width: 30%;
+	}
+	.fmn__block__ttl{
+		font-weight: normal;
+		font-size: 1.4rem;
+		color: #a1a1a1;
+	}
+	.fmn__block__list{
+		margin-top: 15px;
+	}
+	.fmn__block__list li{
+		padding-top: 14px;
+		font-size: 1.4rem;
+	}
+	.footer__sub-nav {
+		margin: 55px 0 0;
+		padding: 27px 0 0;
+		position: relative;
+	}
+	.footer__sub-nav ul {
+	  margin-left: -2em;
+	}
+	.footer__sub-nav ul {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 0 0 -1em;
+		line-height: 1.538;
+	}
+	.footer__sub-nav ul > li {
+		margin: 12px 0 0 1em;
+		font-size: 1.3rem;
+		line-height: 1.538;
+		letter-spacing: .025em;
+	}
+	.footer__sub-nav ul > li a{
+		color: #a1a1a1;
+	}
+	#pagetop {
+		display: block;
+		position: absolute;
+		top: -28px;
+		right: 0;
+		width: 56px;
+		height: 56px;
+	}
+	#pagetop a {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		border: 1px solid #3f3f3f;
+		border-radius: 50%;
+		background: var(--sub-color1);
+		color: #fff;
+	}
+	#pagetop a em{
+		display: none;
+	}
+	#pagetop a::after{
+		content: "";
+		display: inline-block;
+		width: 11px;
+		height: 11px;
+		border-top: 1px solid #b1b1b1;
+		border-right: 1px solid #b1b1b1;
+		transform: rotate(-45deg) translate(-25%,-50%);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+	}
+	.copy-right{
+		display: block;
+		padding: 10px 0 15px;
+		text-align: center;
+		font-size: 1.1rem;
+		color: #999;
+	}
+	/*
+	*【PC】-SNSアイコン
+	-------------------------------------*/
+	.sns{
+		display: inline-block;
+		position: fixed;
+		top:50%;
+		left: 0;
+		transform: translateY(-50%);
+	}
+	.sns-box{
+		width: 45px;
+		height: 45px;
+		background: var(--sub-color1);
+	}
+	.sns-box a{
+		display: flex;
+		width: 100%;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+	}
+	
+}
